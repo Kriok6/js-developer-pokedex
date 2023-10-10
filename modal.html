@@ -1,0 +1,30 @@
+<section class="modal">
+    <section class="modal-inner-container">
+        <header>
+            <article>
+                <h2 class="name">${pokemonDetails.species.name}</h2>
+                <button onclick="modalClose()" class="close-btn">X</button>
+            </article>
+            <div class="superior ${pokemonDetails.types[0].type.name}">
+                <img src=${ pokemonDetails.sprites.other.dream_world.front_default } alt="pokemon-img" />
+            </div>
+        </header>
+        
+        
+        <section class="pokemonStats">
+            <h3>Bases Stats</h3>
+            ${pokemonDetails.stats.map(
+            (stat, index) => `
+            <article class="stats-container">
+                <ul>
+                    <li>
+                        <span key=${index} class="stats">${stat.stat.name}</span>
+                        <span>${stat.base_stat}</span>
+                        <div class="progress-bar"></div>
+                    </li>
+                </ul>
+            </article>`)}
+        </section>
+        
+    </section>
+</section>
